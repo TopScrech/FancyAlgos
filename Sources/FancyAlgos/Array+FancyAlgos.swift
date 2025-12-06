@@ -1,11 +1,11 @@
 import Foundation
 
 public extension Array where Element: Comparable {
-    func bogoSorted(maxAttempts: Int = 50_000) async -> [Element] {
+    func bogoSorted(maxAttempts: Int? = nil) async -> [Element] {
         bogoSort(self, maxAttempts: maxAttempts)
     }
     
-    func quantumBogoSorted(maxUniverses: Int = 100_000) async -> [Element] {
+    func quantumBogoSorted(maxUniverses: Int? = nil) async -> [Element] {
         quantumBogoSort(self, maxUniverses: maxUniverses)
     }
     

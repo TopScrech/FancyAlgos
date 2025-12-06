@@ -2,9 +2,10 @@ import Testing
 @testable import FancyAlgos
 
 struct FancyAlgosTests {
+    private let milArray = (0...1_000_000).shuffled()
+    
     @Test func testStalinSort() async {
-        let array = (0...1_000_000).shuffled()
-        let sortedByStalin = await array.stalinSorted()
+        let sortedByStalin = await milArray.stalinSorted()
         
         print(sortedByStalin)
         
@@ -12,10 +13,10 @@ struct FancyAlgosTests {
     }
     
     @Test func testBogoSort() async {
-        let data = [3, 1, 2]
-        let sorted = await data.bogoSorted(maxAttempts: 10_000)
+        let array = (0...9).shuffled()
+        let sorted = await array.bogoSorted()
         
-        #expect(sorted == [1, 2, 3])
+        #expect(sorted == array.sorted())
     }
     
     @Test func testSleepSort() async {

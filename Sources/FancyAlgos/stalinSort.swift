@@ -1,5 +1,3 @@
-import Foundation
-
 public func stalinSort<Element: Comparable>(_ array: [Element]) -> [Element] {
     var last: Element?
     

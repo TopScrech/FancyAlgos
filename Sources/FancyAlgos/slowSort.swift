@@ -1,5 +1,5 @@
 /// Infamously inefficient recursive sort that "multiplies and surrenders"
-public func slowSort<Element: Comparable>(_ array: [Element]) -> [Element] {
+func slowSort<Element: Comparable>(_ array: [Element]) -> [Element] {
     func sort(_ data: inout [Element], _ i: Int, _ j: Int) {
         guard i < j else { return }
         

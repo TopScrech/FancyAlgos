@@ -1,4 +1,4 @@
-public func stalinSort<Element: Comparable>(_ array: [Element]) -> [Element] {
+func stalinSort<Element: Comparable>(_ array: [Element]) -> [Element] {
     var last: Element?
     
     return array.compactMap { item in

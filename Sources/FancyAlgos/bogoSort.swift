@@ -1,6 +1,6 @@
 /// Randomly shuffles the array until it happens to be sorted.
 /// An upper bound on attempts is used so tests never hang forever
-public func bogoSort<Element: Comparable>(_ array: [Element], maxAttempts: Int = 50_000) -> [Element] {
+func bogoSort<Element: Comparable>(_ array: [Element], maxAttempts: Int = 50_000) -> [Element] {
     guard array.count > 1 else { return array }
     var candidate = array
     

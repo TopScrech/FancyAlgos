@@ -1,5 +1,5 @@
 /// Same spirit as bogosort but with a tongue‑in‑cheek multiverse twist
-public func quantumBogoSort<Element: Comparable>(_ array: [Element], maxUniverses: Int = 100_000) -> [Element] {
+func quantumBogoSort<Element: Comparable>(_ array: [Element], maxUniverses: Int = 100_000) -> [Element] {
     guard array.count > 1 else { return array }
     var candidate = array
     

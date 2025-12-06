@@ -17,8 +17,8 @@ struct FancyAlgosTests {
     }
     
     @Test func testSleepSort() async {
-        let data: [UInt] = [0, 3, 1, 2]
-        let sorted = await data.sleepSorted(timeFactor: 500) // 0–1.5ms total
+        let data: [Int] = [0, 3, 1, 2]
+        let sorted = await data.sleepSorted()
         
         #expect(sorted == [0, 1, 2, 3])
     }

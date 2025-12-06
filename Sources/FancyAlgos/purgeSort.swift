@@ -1,5 +1,5 @@
 /// Walks left→right keeping only values that preserve ascending order
-public func purgeSort<Element: Comparable>(_ array: [Element]) -> [Element] {
+func purgeSort<Element: Comparable>(_ array: [Element]) -> [Element] {
     guard var last = array.first else { return [] }
     var kept: [Element] = [last]
     

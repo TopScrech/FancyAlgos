@@ -1,24 +1,24 @@
 import Foundation
 
-extension Array where Element == Int {
-    func sleepSorted() -> [Element] {
-        var sortedElements = [Element]()
-        
-        let group = DispatchGroup()
-        
-        for element in self {
-            group.enter()
-            
-            DispatchQueue.global().async {
-                let ms = 1000
-                usleep(useconds_t(element * ms))
-                print(element)
-                sortedElements.append(element)
-                group.leave()
+@available(iOS 13, macOS 10.15, tvOS 13, watchOS 6, *)
+public extension Array where Element == Int {
+    func sleepSorted() async -> [Element] {
+        await withTaskGroup(of: Int.self) { group in
+            for element in self {
+                group.addTask {
+                    try? await Task.sleep(nanoseconds: UInt64(element) * 1_000_000)
+                    print(element)
+                    return element
+                }
             }
+            
+            var sortedElements = [Element]()
+            
+            for await value in group {
+                sortedElements.append(value)
+            }
+            
+            return sortedElements
         }
-        
-        group.wait()
-        return sortedElements
     }
 }

@@ -3,10 +3,12 @@ import Testing
 
 struct FancyAlgosTests {
     @Test func testStalinSort() async {
-        let array = [1, 4, 2, 3, 5]
+        let array = (0...1_000_000).shuffled()
         let sortedByStalin = await array.stalinSorted()
         
         print(sortedByStalin)
+        
+        #expect(sortedByStalin == sortedByStalin.sorted())
     }
     
     @Test func testBogoSort() async {

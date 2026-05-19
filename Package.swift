@@ -1,12 +1,11 @@
-// swift-tools-version: 6.2.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 6.3.2
 
 import PackageDescription
 
 let package = Package(
     name: "FancyAlgos",
     products: [
-        .library(name: "FancyAlgos", targets: ["FancyAlgos"]),
+        .library(name: "FancyAlgos", targets: ["FancyAlgos"])
     ],
     targets: [
         .target(name: "FancyAlgos"),
